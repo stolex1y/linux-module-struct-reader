@@ -1,7 +1,6 @@
 TARGET = get_memblock
-MODULES_DIR = /home/stolexiy/WSL2-Linux-Kernel
+MODULES_DIR = /lib/modules/$(shell uname -r)/build
 obj-m += $(TARGET).o
-#$(TARGET)-objs += get_memblock.o
 
 all: 
 	make -C $(MODULES_DIR) M=$(shell pwd) modules
