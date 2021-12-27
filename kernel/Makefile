@@ -1,7 +1,6 @@
-TARGET = get_memblock
+TARGET = kernel_reader
 MODULES_DIR = /home/stolexiy/WSL2-Linux-Kernel
 obj-m += $(TARGET).o
-#$(TARGET)-objs += get_memblock.o
 
 all: 
 	make -C $(MODULES_DIR) M=$(shell pwd) modules
@@ -16,4 +15,8 @@ load:
 unload:
 	sudo rmmod $(TARGET)
 	sudo dmesg -c
+	
+reload: unload all load
+	
+.PHONY: clean load reload unload
 	
