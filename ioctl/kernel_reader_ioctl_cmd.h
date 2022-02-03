@@ -22,3 +22,4 @@ struct ioctl_query {
 	enum KERNEL_STRUCTS kernel_struct_type;
 	int pid;
 };
+
